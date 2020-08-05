@@ -1,0 +1,73 @@
+<html>
+<head>
+<script type="text/javascript">
+
+function loadXMLDoc()
+{
+	var xmlhttp;
+	var keys = document.dummy.sale.value
+	var urls = "db_fetch.jsp?ok="+keys
+	if(window.XMLHttpRequest)
+  	{
+		xmlhttp = new XMLHttpRequest();
+	}
+	else
+	{
+		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+ 	xmlhttp.onreadystatechange=function()
+	{
+
+		if(xmlhttp.readyState==4 && xmlhttp.status==200)
+    		{
+			removeall();
+	            	z=0;
+            	var resText = xmlhttp.responseText;
+		var myObj = JSON.parse(resText);
+			
+			for(x in myObj.amount) 
+			{		
+		    		addoptions(myObj.amount[x]);
+	      		}
+		}
+ 		
+		function removeall()
+		{
+ 		        var ct = document.dummy.sale2.length;
+		        for(i=ct; i>=0; i--)    
+			{    
+            	document.dummy.sale2.options[i]=null;  
+					// to remove option
+             		}
+    		}
+ 		function addoptions(reslt)
+    		{
+ 		        var ct1 = document.createElement("OPTION");
+		        ct1.text=reslt;
+		        ct1.value=reslt;
+		        document.dummy.sale2.options.add(ct1);
+ 		}
+	}    
+ 
+	xmlhttp.open("GET",urls,true);
+	xmlhttp.send();
+}
+</script>
+</head>
+<body>
+
+ <form name="dummy">
+	<font face="verdana" size="5">
+		Employee Number:
+			<select name="sale" onchange="loadXMLDoc()">
+		           	       <option>select</option>
+		            <option value="101">101</option>
+		            <option value="102">102</option>
+		    	</select>
+	<br>	Sales:	<select name="sale2">
+		        	  <option>--choose--</option>
+			</select>
+	</font>
+</form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+<head>
+<script type="text/javascript">
+function myvalidation()
+{
+var flag=1;
+var usr=document.getElementById("txtuser").value;
+var pass=document.getElementById("txtpass").value;
+if(usr=='' || usr.length==0)
+{
+document.getElementById("usrmsg").innerHTML="<font color='red'>user can not be empty</font>";
+flag=0;
+}
+if(pass==''||pass.length==0) 
+{
+document.getElementById("passmsg").innerHTML="<font color='red'>user can not be empty</font>";
+flag=0;
+}
+if (flag==0)
+return(false);
+return(true);
+}
+</script>
+</head>
+<body>
+<form action="sample.jsp">
+<div id="usrmsg"></div>
+Enter User:<input type ="text" id="txtuser" name="txtuser"/><br>
+<div id="passmsg"></div>
+Enter Password:<input type ="password" id="txtpass" name="txtpass"/><br>
+<input type="submit" value ="submit" onclick="return myvalidation();"/>
+</form>
+</body>
+</html>

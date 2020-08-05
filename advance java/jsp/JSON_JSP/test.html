@@ -1,0 +1,29 @@
+<html>
+
+<script type="text/javascript">
+	function abc()	
+	{
+		alert("hello");
+		var myObj = {"name":"ABC","code":101,"salary":20000};		
+	document.getElementById("tname").innerHTML=myObj["name"];
+	document.getElementById("tcode").innerHTML=myObj["code"];
+	document.getElementById("tsalary").innerHTML=myObj.salary;
+	
+	}
+</script>
+
+<body>
+	<table>
+		<tr>
+			<td>Name</td><td id="tname"> </td>
+		</tr>
+		<tr>
+			<td>Code</td><td id="tcode"> </td>
+		</tr>
+		<tr>
+			<td>Salary</td><td id="tsalary"> </td>
+		</tr>
+	</table>
+	<br> <input type="button" value="Click" onclick="abc();"/>
+</body>
+</html>

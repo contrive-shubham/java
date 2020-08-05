@@ -1,0 +1,14 @@
+<web-app>
+<servlet>
+<servlet-name>sample</servlet-name>
+<servlet-class>SignUp</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>sample</servlet-name>
+<url-pattern>/SignUp</url-pattern>
+</servlet-mapping>
+
+</web-app>
+
+

@@ -1,0 +1,16 @@
+<html>
+<script type="text/javascript">
+function abc(x)
+{
+var textField=document.getElementById("test");
+if(x==1)textField.value="Enter the name";
+if(x==2)textField.value="Enter the rollno";
+}
+</script>
+<body>
+<input type="text" id="test" value=""/>
+<br>search By:
+<br><input type="radio" name="option" onclick="abc(1);"/>Name
+<br><input type="radio" name="option" onclick="abc(2);"/>Rollno
+</body>
+</html>

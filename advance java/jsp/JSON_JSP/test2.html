@@ -1,0 +1,21 @@
+<html>
+
+<script type="text/javascript">
+	function abc()	
+	{
+		alert("hello");
+		var myObj = {"name":"ABC","code":101,"salary":20000};		
+		for(x in myObj)
+		{
+	document.getElementById("demo").innerHTML += "  "+myObj[x];
+		}
+	}
+</script>
+
+<body>
+
+	<p id="demo">   </p> 
+	
+	<br> <input type="button" value="Click" onclick="abc();"/>
+</body>
+</html>
